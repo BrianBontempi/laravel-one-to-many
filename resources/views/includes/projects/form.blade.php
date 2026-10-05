@@ -19,7 +19,7 @@
                     </div>
                     @else
                     <div class="form-text">
-                        Inserisci il titolo del post
+                        Inserisci il titolo del progetto
                     </div>
                     @enderror
                 </div>
@@ -33,8 +33,7 @@
             <div class="col-12">
                 <div class="mb-3">
                     <label for="content" class="form-label">Descrizione</label>
-                    <textarea name="content" class="form-control @error('content') is-invalid @elseif(old('content', '')) is-valid @enderror" id="content" rows="30" required> {{ old('content', $project->content)}}
-                    </textarea>
+                    <textarea name="content" class="form-control @error('content') is-invalid @elseif(old('content', '')) is-valid @enderror" id="content" rows="30" required>{{ old('content', $project->content) }}</textarea>
                     @error('content')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -51,7 +50,7 @@
                 <select name="type_id" id="type_id" class="form-select @error('type_id') is-invalid @elseif(old('type_id', '')) is-valid @enderror">
                     <option value="">Nessuna</option>
                     @foreach ($types as $type)
-                    <option value="{{ $type->id }}" @if(old('type_id', $project->type?->id) == $type->id) selected @endif()>{{ $type->label }}</option>
+                    <option value="{{ $type->id }}" @if(old('type_id', $project->type?->id) == $type->id) selected @endif>{{ $type->label }}</option>
                     @endforeach
                 </select>
                 @error('type_id')
@@ -86,7 +85,7 @@
         </div>
         <hr>
         <div class="d-flex align-items-center justify-content-between">
-            <a href="{{route('admin.projects.index')}}" class="btn btn-primary">Torna indientro</a>
+            <a href="{{route('admin.projects.index')}}" class="btn btn-primary">Torna indietro</a>
 
             <div class="d-flex align-items-center gap-2">
                 <button type="reset" class="btn btn-secondary">Svuota i campi</button>

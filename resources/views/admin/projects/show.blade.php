@@ -47,5 +47,4 @@
 
 @section('scripts')
 @vite('resources/js/delete_confirmation.js')
-@vite('resources/js/slug_preview.js')
 @endsection

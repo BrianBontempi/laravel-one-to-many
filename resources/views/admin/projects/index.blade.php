@@ -13,6 +13,7 @@
         <tr class="align-middle text-center">
             <th scope="col">#</th>
             <th scope="col">Titolo</th>
+            <th scope="col">Tipologia</th>
             <th scope="col">Slug</th>
             <th scope="col">Creato il</th>
             <th scope="col">Ultima modifica</th>
@@ -81,14 +82,4 @@
 
 @section('scripts')
 @vite('resources/js/delete_confirmation.js')
-
-<script>
-    const titleField = document.getElementById('title');
-    const slugField = document.getElementById('slug');
-
-    titleField.addEventListener('blur', () => {
-        slugField.value = titleField.value;
-    })
-
-</script>
 @endsection

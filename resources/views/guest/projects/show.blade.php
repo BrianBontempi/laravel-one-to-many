@@ -18,6 +18,9 @@
                 <div class="col">
                     <h5 class="card-title">{{ $project->title}}</h5>
                     <h6 class="card-subtitle my-3 text-body-secondary">{{ $project->created_at}}</h6>
+                    @if($project->type)
+                        <span class="badge rounded-pill mb-3" style="background-color: {{ $project->type->color }}">{{ $project->type->label }}</span>
+                    @endif
                     <p class="card-text">{{ $project->content }}</p>
                 </div>
             </div>
